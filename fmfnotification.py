@@ -36,12 +36,12 @@ def sendText(postInfo):
 
 # #constantly updating in case servers are down
 def secondary():
-    try:
-        while True:
+    while True:
+        try:
             fmfNotification()
-    except:
-        traceback.print_exc()
-        print('Resuming in 30sec...')
-        time.sleep(30)
+        except:
+            traceback.print_exc()
+            print('Resuming in 30sec...')
+            time.sleep(30)
 
 secondary()
